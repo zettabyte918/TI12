@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        const cap = (e) => {
+            let ch = document.getElementById("in1").value;
+            document.getElementById("in1").value =  `${ch.substr(0,1).toUpperCase()}${ch.substr(1).toLowerCase()}` 
+            
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input id="in1" type="text" /></td>
+        <td><button onclick="cap()">CAP</button></td>
+    </tr>
+</table>
+</body>
+</html>

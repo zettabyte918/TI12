@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let d = new Date();
+    let jour = d.getDate();
+    let mois = d.getMonth()+1;
+    let annee = d.getFullYear();
+    let h = d.getHours();
+    let mi = d.getMinutes();
+    let se = d.getSeconds();
+    let jourSemaine = d.getDay();
+    let m = null;
+    let j = null;
+
+    alert(`Aujourd'hui ${jour}/${mois}/${annee}`);
+
+    // switch (mois) {
+    //     case 1: m = "janvier"; break;
+    //     case 2: m= "fevrier"; break;
+    //     case 3: m= "mars"; break;
+    //     case 4: m= "avril"; break;
+    //     case 5: m= "mai"; break;
+    //     case 6: m= "juin"; break;
+    //     case 7: m= "juillet"; break;
+    //     case 8: m= "aout"; break;
+    //     case 9: m= "september"; break;
+    //     case 10: m= "october"; break;
+    //     case 11: m= "november"; break;
+    //     case 12: m= "december"; break;
+    //     default:
+    //         break;
+    // }
+
+    // switch (jour) {
+    //     case 1: j= "lundi"; break;
+    //     case 2: j= "mardi"; break;
+    //     case 3: j= "mercredi"; break;
+    //     case 4: j= "jeudi"; break;
+    //     case 5: j= "vendredi"; break;
+    //     case 6: j= "samedi"; break;
+    //     case 7: j= "dimanche"; break;
+    //     default:
+    //         break;
+    // }
+
+    let tab1 = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"];
+    let tab2 = ["janvier","fevrier","mars","avril","mai","juin","juillet","aout","september","october","november","december"];
+    
+    alert(`Aujourd'hui ${tab1[jourSemaine-1]}/${tab2[mois-1]}/${annee}`);
+
+
+</script>
+</body>
+</html>

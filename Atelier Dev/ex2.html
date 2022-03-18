@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page 1</title>
+</head>
+<body>
+    <script>
+        const Age = prompt("donner votre Age:");
+        if(!isNaN(Age)) {
+            if(Age >= 0 && Age <=3) {
+                alert("Bebé");
+            } else if(Age >= 4 && Age <=12) {
+                alert("Enfant");
+            } else if(Age >= 13 && Age <=18) {
+                alert("Jeune");
+            } else {
+                alert("Adule");
+            }
+        } else {
+            alert("Invalide Age")
+        }
+    </script>
+</body>
+</html>
