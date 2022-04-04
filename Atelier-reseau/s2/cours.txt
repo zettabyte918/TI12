@@ -1,0 +1,6 @@
+ps -aux: commande pour tous les processus pour l'utilisteur current
+pid=1 : init : (ancetre de tous les processus).
+init arbre.
+top: commade affiche proc en temps reel.
+sh script.sh: commande pour exucuter un fichier bash
+kill: kill 5496 (kill le pross de pid 5496).
