@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APP2</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="text" id="input1" onkeyup="calculer()" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="input2" onkeyup="calculer()" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="results" /></td>
+        </tr>
+    </table>
+<script>
+
+    function calculer() {
+        let input1 = document.getElementById("input1").value;
+        let input2 = document.getElementById("input2").value;
+        document.getElementById("results").value = eval(`${input1}+${input2}`);
+    }
+    
+</script>  
+</body>
+</html>

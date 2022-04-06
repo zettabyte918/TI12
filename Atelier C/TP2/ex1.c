@@ -5,7 +5,16 @@ typedef struct cellule {
     int el;
     struct cellule *next;
 } cell;
+
+typedef struct cellule2 {
+    int el;
+    struct cellule2 *next;
+    struct cellule2 *previous;
+} cell2;
+
+
 typedef cell *Liste;
+typedef cell2 *Liste2;
 
 
 void remplir(int *t, int n){
@@ -55,8 +64,8 @@ void affichListe(Liste l) {
         }
 }
 
-int somme(Liste l){
-   Liste pt = l;
+int somme(Liste2 l){
+   Liste2 pt = l;
    int s=0;
     while(pt!=NULL) {
         s=s+(pt->el);
@@ -65,17 +74,56 @@ int somme(Liste l){
 return s;
 }
 
+Liste2 paire(int *t, int n){
+    Liste2 l2,pt2,q;
+    int *pt;
+    int i=0;
+    int b=0;
+    if(!n) return NULL;
+    else {
+        pt=t;
+        while(!b) {
+            if(*pt % 2 != 0) {
+                b=1;
+            } else {
+                pt++;
+            }
+            i++;
+        }
+        q=(Liste2)malloc(sizeof(cell2));
+        q->el = *pt;
+        q->next = NULL;
+        q->previous = NULL;
+        l2=q;
+        pt2=l2;
+        printf("==%d \n",l2->el);
+        for(pt=t+i;pt<t+n;pt++){
+            if(*pt % 2 != 0) {
+                q=(Liste2)malloc(sizeof(cell2));
+                q->el = *pt;
+                q->next = NULL;
+                q->previous = pt2;
+                pt2->next = q;
+                pt2 = pt2->next;
+            }
+        }
+    }
+    return l2;
+}
+
 int main(){
     int t[30];
     int n;
     Liste l;
+    Liste2 l2;
 
     printf("entrer n: ");
     scanf("%d",&n);
     remplir(t,n);
     //affiche(t,n);
-    l=copy(t,n);
+    //l=copy(t,n);
     //affichListe(l);
-    printf("somme=%d",somme(l));
+    l2=paire(t,n);
+    printf("somme=%d",somme(l2));
     return 0;
 }
