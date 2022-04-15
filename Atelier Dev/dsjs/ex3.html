@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EX3</title>
+</head>
+<body>
+<table>
+<tr>
+    <td>Valeur a saisir</td>
+    <td><input onkeyup="calculer()" type="text" id="date"/></td>
+</tr>
+<tr>
+    <td><button onclick="calculer()">Calculer</button></td>
+</tr>
+</table>
+<h1 id="annee"></h1>
+<h1 id="mois"></h1>
+<h1 id="jours"></h1>
+<script>
+    const calculer = () => {
+        let dateNow = new Date();
+        let input = document.getElementById("date").value;
+        let date = new Date(input);
+        let year = dateNow.getFullYear() - date.getFullYear();
+        let mois = year * 12;
+        let jours = mois * 30;
+        if(year && mois && jours) {
+            document.getElementById("annee").innerHTML = `Mon age en annee est ${year} ans`;
+            document.getElementById("mois").innerHTML = `Mon age en mois est ${mois} ans`;
+            document.getElementById("jours").innerHTML = `Mon age en jours est ${jours} ans`;
+        } else {
+            document.getElementById("annee").innerHTML = ``;
+            document.getElementById("mois").innerHTML = ``;
+            document.getElementById("jours").innerHTML = ``;
+        }
+
+
+    }
+</script>
+</body>
+</html>

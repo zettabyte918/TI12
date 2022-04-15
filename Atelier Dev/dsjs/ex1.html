@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EX1</title>
+</head>
+<body>
+   <table>
+       <tr>
+           <td>
+               <h1>Exercice 1</h1>
+               <h1>Le verbe proposé: <span id="verbe"></span></h1>
+            </td>
+       </tr>
+       <tr>
+           <td>
+               <button onclick="pp()">Particpe passé</button>
+               <input id="pp" type="text"/>
+            </td>
+        </tr> 
+        <tr>
+            <td>
+                <button onclick="adj()">Afjectif</button>
+                <input id="adj" type="text"/>
+            </td>
+        </tr> 
+        <tr>
+            <td>
+                <button onclick="lettre()">Nombre de lttre</button>
+                <input id="ln" type="text"/>
+            </td>
+        </tr> 
+    </table>
+<script>
+    var ch = "";
+    do {
+        ch = prompt("verbe");
+        document.getElementById("verbe").innerHTML = ch;
+    } while (ch.substr(-2) != "er");
+
+    const pp = () => {
+        document.getElementById("pp").value =  `${ch.substr(0,ch.length -2)}é`;
+    }
+
+    const adj = () => {
+        document.getElementById("adj").value =  `${ch.substr(0,ch.length -1)}able`;
+    }
+
+    const lettre = () => {
+        document.getElementById("ln").value =  `${ch.length}`;
+    }
+</script>
+</body>
+</html>

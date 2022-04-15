@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+let arr = [
+  {
+    name: "sexe",
+    input: "radio",
+    value: [
+      {
+        sexe: "H",
+      },
+      {
+        sexe: "M",
+      },
+    ],
+  },
+  {
+    name: "class",
+    input: "select",
+    option: [
+      {
+        class: "ti11",
+      },
+      {
+        class: "ti12",
+      },
+      {
+        class: "ti13",
+      },
+    ],
+  },
+  {
+    name: "language",
+    input: "checkbox",
+    value: [
+      {
+        lang: "arabic",
+        checked: "true",
+      },
+      {
+        lang: "francais",
+        checked: "true",
+      },
+      {
+        lang: "arabic",
+        checked: "false",
+      },
+    ],
+  },
+  {
+    name: "nom",
+    input: "text",
+  },
+  {
+    name: "prenom",
+    input: "text",
+  },
+];
+
+let html = "";
+
+arr.map((tr) => {
+    if(tr.input == "text") 
+        html += `<tr><td>${tr.name}</td><td><input type='${tr.input}'><td/></tr>`;
+    
+    if(tr.input == "select") 
+        html += `<tr><td>${tr.name}</td><td><select>`+ tr.option.map((option, i)=> `<option value='${tr.option[i].class}'>${tr.option[i].class}</option>`) +`</select><td/></tr>`;
+})
+
+document.write(`<table>${html}</table>`);
+
+</script>
+</body>
+</html>

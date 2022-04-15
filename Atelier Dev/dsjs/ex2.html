@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EX2</title>
+</head>
+<body>
+    <h1>Mise en forme</h1>
+    <h1 id="text"></h1>
+<table border="1">
+    <tr>
+        <td>Saisir un texte</td>
+        <td><input id="inptext" onkeyup="changeVal()" type="text"/></td>
+    </tr>
+    <tr>
+        <td>Taille du texte (1..7)</td>
+        <td>
+            <select onchange="changeSize()" id="taille">
+                <option value="xx-small">1</option>
+                <option value="x-small">2</option>
+                <option value="small">3</option>
+                <option value="meduim">4</option>
+                <option value="large">5</option>
+                <option value="x-large">6</option>
+                <option value="xx-large">7</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Couleur (proposer troi couleur)</td>
+        <td>
+            <select onchange="changeColor()" id="couleur">
+                <option value="red">rouge</option>
+                <option value="blue">bleu</option>
+                <option value="green">vert</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Police</td>
+        <td>
+            <input type="checkbox" onclick="italic()" id="i">Italique <input type="checkbox" id="g" />Gras
+        </td>
+    </tr>
+    <tr>
+        <td>Lettre</td>
+        <td>
+            <input type="radio" name="r"/>Majuscule <input type="radio" name="r"/>Minuscule
+        </td>
+    </tr>
+    <tr>
+        <td><button>Modifier</button></td>
+        <td><input type="text"/></td>
+    </tr>
+</table>
+<script>
+
+    const changeVal = () => {
+        document.getElementById("text").innerHTML = document.getElementById('inptext').value
+    }
+
+    const changeSize = () => {
+        document.getElementById('text').style.fontSize = document.getElementById('taille').value;
+    }
+
+    const changeColor = () => {
+        document.getElementById("text").style.color = document.getElementById('couleur').value;
+    }
+
+    
+</script>
+</body>
+</html>
