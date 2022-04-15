@@ -52,7 +52,7 @@ Debut
     i=1
     Tantque (not(Vide(P))) Faire
         X=Depiler(P)
-        si(X <> T[i]) Alors
+        si(X <> CH[i]) Alors
             Palindrome ← faux
         sinon
             i=i+1
