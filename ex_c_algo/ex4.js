@@ -28,5 +28,5 @@ Debut
     si(Vide(P)) Alors
         CalculePile ← X
     sinon 
-        CalculePile(P,Depiler(P))
+        CalculePile(P,X + Depiler(P,X))
 Fin

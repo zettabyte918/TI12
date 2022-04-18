@@ -8,11 +8,31 @@ typedef struct cellule {
 
 typedef cell *PILE;
 
+PILE depiler(PILE p, int * e) {
+    PILE pt = p;
+    PILE ptt = p;
+    *e = p->el;
+    pt = pt->next;
+    free(ptt);
+    return pt;
+}
+
 PILE init() {
     PILE p;
     p = NULL;
     return p;
 }
+
+int pileVide(PILE p) {
+    if(p == NULL) return 1;
+    return 0;
+}
+
+int calp(PILE p, int * x) {
+    if(pileVide(p))
+        return x;
+    calp(p,*x+depiler(p,x));
+} 
 
 PILE empiler(PILE p, int el) {
     PILE p1;
@@ -24,35 +44,14 @@ PILE empiler(PILE p, int el) {
     return pt;
 }
 
-PILE depiler(PILE p, int * e) {
-    PILE pt = p;
-    PILE ptt = p;
-    *e = p->el;
-    pt = pt->next;
-    free(ptt);
-    return pt;
-}
-
-int pileVide(PILE p) {
-    if(p == NULL) return 1;
-    return 0;
-}
-
-void affiche(PILE p) {
-    PILE pt = p;
-    while(!pileVide(pt)) {
-        printf("%d\n",pt->el);
-        pt = pt->next;
-    }
-}
-
 void main() {
     PILE p;
-    int e;
+    int e = 0;
     p=(PILE)malloc(sizeof(cell));
     p = init();
     p = empiler(p,5);
-    affiche(p);
-    p = depiler(p,&e);
-    affiche(p);
+    p = empiler(p,5);
+    p = empiler(p,5);
+    p = empiler(p,5);
+    printf("%d",calp(p,&e));
 }

@@ -4,18 +4,9 @@
 typedef struct cellule {
     int el;
     struct cellule *next;
-} cell;
+} cellule;
 
-typedef cell *PILE;
-
-PILE depiler(PILE p, int * e) {
-    PILE pt = p;
-    PILE ptt = p;
-    *e = p->el;
-    pt = pt->next;
-    free(ptt);
-    return pt;
-}
+typedef cellule *PILE;
 
 PILE init() {
     PILE p;
@@ -26,10 +17,19 @@ PILE init() {
 PILE empiler(PILE p, int el) {
     PILE p1;
     PILE pt = p;
-    p1 = (PILE)malloc(sizeof(cell));
+    p1 = (PILE)malloc(sizeof(cellule));
     p1->el = el;
     p1->next = p;
     pt = p1;
+    return pt;
+}
+
+PILE depiler(PILE p, int * e) {
+    PILE pt = p;
+    PILE ptt = p;
+    *e = p->el;
+    pt = pt->next;
+    free(ptt);
     return pt;
 }
 
@@ -38,20 +38,37 @@ int pileVide(PILE p) {
     return 0;
 }
 
-int * inverse(PILE p, int t[],int n){
-    t[0]=55;
-    printf("%d",t[0]);
+void affiche(int * pt, int n) {
+    for(int i=0;i<n;i++) {
+        printf("%d \n",pt[i]);
+    }
+}
+
+int * inverse(int * t, int n) {
+    PILE p;
+    int e;
+    p=(PILE)malloc(sizeof(cellule));
+    p = init();
+    for(int i=0;i<n;i++) {
+       p = empiler(p,t[i]); 
+    }
+    int i = 0;
+    PILE pt = p;
+    
+    while(!pileVide(pt)) {
+        t[i]=pt->el;
+        i++;
+        pt = pt->next;
+    }
+
     return t;
 }
 
 void main() {
-    PILE p;
-    int t[10];
-    int n = 9;
-    int e;
-    p=(PILE)malloc(sizeof(cell));
-    p = init();
-    t=inverse(p,t,n);
-    
-    
+    int *pt;
+    int n=5;
+    int t[5]={10,20,30,40,50};
+
+    pt = inverse(t,n);
+    affiche(pt,n);
 }

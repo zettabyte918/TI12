@@ -39,13 +39,13 @@ Fin
 
 Fonction Copy(P1:*PILE, P2:*PILE) : PILE
 Var 
-    q : *Cellule
     X,I : entier
     T : Tab
 Debut
     {i=0}
     Tantque (not(Vide(P1))) Faire
         X=Depiler(P1)
+        Empiler(P1,X)
         T[i] = X
         i=i+1
     Fin
