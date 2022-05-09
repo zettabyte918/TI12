@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const max = 5;
+    const min = 10;
+    let x = Math.floor(Math.random() * (max - min + 1) + min); // [min..max]
+    alert(`x=${x}`);
+
+    function jeux(x) {
+        let i = 0;
+        let response;
+            do {
+                i++;
+                response = prompt("Donner un entier entre ");
+                    if(x != response && response < x) {
+                        alert("plus grand");
+                    } else if(x != response && response > x){
+                        alert("plus petit");
+                    }
+            } while(x != response)
+        return i;
+    }
+
+    alert(`${jeux(x)} fois`);
+</script>
+</body>
+</html>

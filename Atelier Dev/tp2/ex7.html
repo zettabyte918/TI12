@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><button onclick="fillInput()">Lancer</button></td>
+        <td><input id="in1" type="text" value="" placeholder="Code 1"/></td>
+        <td><input id="in2" type="text" value="" placeholder="Code 2"/></td>
+        <td><input id="in3" type="text" value="" placeholder="Code 3"/></td>
+    </tr>
+</table>
+<script>
+    const genCode = (min = 1, max = 6) => {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    
+    const setValue = (id ,code) => {
+        document.getElementById(id).value = code();
+    }
+
+    const fillInput = () => {
+        setValue("in1", genCode);
+        setValue("in2", genCode);
+        setValue("in3", genCode);
+
+    }
+</script>
+</body>
+</html>

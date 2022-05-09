@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EX1</title>
+</head>
+<body>
+    <script>
+        let min = 5;
+        let max = 10;
+        var i = 0;
+        let x = Math.floor(Math.random() * (max - min +1) + min);
+        alert(x);
+        do {
+            var ch = prompt("nb= ");
+            i++;
+            if(ch == x) alert("bravo");
+            else if(ch < x) alert("ch<x");
+            else if (ch > x) alert("ch>x");
+        } while (ch != x);
+        alert(i+" coups");
+    </script>
+</body>
+</html>

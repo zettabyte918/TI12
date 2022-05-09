@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Didactitiel : apprentissage nom d'animaux</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+<script>
+    let arr = [
+        [
+            {
+                name :"dog",
+                image:"./dog.png"
+            },
+            {
+                name :"elephant",
+                image:"./elephant.png"
+            },
+            {
+                name :"frog",
+                image:"./frog.png"
+            },
+            {
+                name :"lion",
+                image:"./lion.png"
+            },
+        ],
+        [
+            {
+                name :"sheep",
+                image:"./sheep.png"
+            },
+            {
+                name :"bear",
+                image:"./bear.png"
+            },
+            {
+                name :"mouse",
+                image:"./mouse.png"
+            },
+            {
+                name :"fox",
+                image:"./fox.png"
+            },
+        ]
+    ];
+
+    let minl = 0;
+    let maxl = 1;
+    
+    let minc = 0;
+    let maxc = 3;
+
+    let l = Math.floor(Math.random() * (maxl - minl + 1) + minl); // [min..max]
+    let c = Math.floor(Math.random() * (maxc - minc + 1) + minc); // [min..max]
+    
+    let guess = arr[l].filter((el,i) => {
+        if(i==c) return el;
+    })
+
+    const { name } = guess[0];
+
+    const check = (animal) => {
+        if(animal == name) return alert("bravooooo :D");
+        return alert("no bravoo :((((")
+    }
+
+    var ligne1 = "";
+    var ligne2 = "";
+
+    const change = (name) => {
+        document.getElementById(name).src = "./nope.png";
+    }
+
+    const back = (name) => {
+        document.getElementById(name).src = `./${name}.png`;
+    }
+
+    arr[0].map((td) => {
+        ligne1 += `<td><img src='${td.image}' id='${td.name}' onMouseOver="change('${td.name}')" onMouseOut="back('${td.name}')" onclick="check('${td.name}')" width='100' height="100"></td>`;
+    })
+
+    arr[1].map((td) => {
+        ligne2 += `<td><img src='${td.image}' id='${td.name}' onMouseOver="change('${td.name}')" onMouseOut="back('${td.name}')" onclick="check('${td.name}')" width='100' height="100"></td>`;
+    })
+    
+    document.write(`<h2>cliquer sur la bonne image</h2>`);
+    document.write(`<table><tr>${ligne1}</tr><tr>${ligne2}</tr></table>`);
+    document.write(`<span style="font-family: sans-serif; color: green; background-color: yellow;font-size: x-large;font-weight: bolder;">${name}</span>`);
+</script>
+</body>
+</html>

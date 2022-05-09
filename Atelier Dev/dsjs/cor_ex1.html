@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ex1</title>
+</head>
+<body>
+    <button onclick="pp()">participe passe</button>
+    <button onclick="adj()">adj</button>
+    <button onclick="longeur()">longeur</button>
+    <script>
+        var verbe = "";
+        var i = 1;
+        do {
+            verbe = prompt("verbe: ");
+            i=i+1;
+        } while((verbe.substr(-2) != "er") && i <= 3);
+
+        function pp() {
+            alert(verbe.substr(0,verbe.length-2) + 'é');
+        }
+
+        function adj(){
+            alert(verbe.substr(0,verbe.length-2) + 'eable');
+        }
+
+        function longeur(){
+            alert(verbe.length);
+
+        }
+    </script>
+</body>
+</html>
