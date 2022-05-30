@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Module Développement Web 2</h1>
+    <div id="idv">
+      <h1>Le Plan du Module</h1>
+
+      <ol>
+        <li>Chapitre 1 : Introduction Générale au JS</li>
+        <li>Chapitre 2 : Les Structures de Contrôles</li>
+        <li>Chapitre 3 : Les fonctions</li>
+      </ol>
+      <a href="www.w3school.com"> Autoformation</a>
+      <a href="www.google.fr"> Rechercher</a>
+      <fieldset>
+        <legend>Contenu</legend>
+        <div id="contenu"></div>
+      </fieldset>
+      <br />
+      <button onclick="affiche()">affiche</button>
+      <button onclick="modifier()">modifier</button>
+    </div>
+    <script>
+      let arr = [
+        "Introduction",
+        "Les structures simples",
+        "Les structures conditionnelles",
+        "Les structures répétitives",
+      ];
+      const affiche = () => {
+        const h1 = document.getElementsByTagName("h1");
+        const li = document.getElementsByTagName("li");
+        const a = document.getElementsByTagName("a");
+        contenu.innerHTML = `h1: ${h1.length}</br>li: ${li.length}</br>a: ${a.length}`;
+      };
+
+      const modifier = () => {
+        let list = "";
+        const ch2 = document.getElementsByTagName("li")[1];
+        const ch2Text = ch2.innerHTML;
+        for (let i = 0; i < arr.length; i++) {
+          const element = arr[i];
+          list += `<li value="${i}">${element}</li>`;
+        }
+        ch2.innerHTML = `${ch2Text} <ul>${list}</ul>`;
+      };
+
+      const modifier2 = () => {
+        let html = "";
+        let ol = document.getElementsByTagName("ol")[0];
+        for (let i = 0; i < ol.children.length; i++) {
+          let element = ol.children[i];
+          html += `<p style="font-size: 30px; color: gray;">${element.innerHTML}</p>`;
+        }
+        const element = document.createElement("div");
+        element.innerHTML = html;
+        document.getElementsByTagName("h1")[0].after(element);
+      };
+      modifier2();
+
+      const change = () => {
+        // 2eme a
+        document.getElementsByTagName(
+          "a"
+        )[1].innerHTML = `google.jpg <img src="./google.jpg"/>`;
+
+        // 1eme a
+        document.getElementsByTagName("a")[0].href = "https://www.cours-js.com";
+      };
+      change();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      id="img1"
+      onmouseover="change()"
+      onclick="affiche()"
+      width="200px"
+      src="./i1.png"
+    />
+
+    <script>
+      const change = () => {
+        document.getElementById("img1").src = "./i2.png";
+      };
+
+      const affiche = () => {
+        alert(document.getElementById("img1").src);
+      };
+    </script>
+  </body>
+</html>

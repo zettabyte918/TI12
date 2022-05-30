@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enseignants>
+    <enseignant dep="TI">
+        <nom> E1 </nom>
+        <prenom> P1 </prenom>
+    </enseignant>
+    <enseignant dep="GPR">
+        <nom> E2 </nom>
+        <prenom> P2 </prenom>
+        <age> 32 </age>
+    </enseignant>
+</enseignants>

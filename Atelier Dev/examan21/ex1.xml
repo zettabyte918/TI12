@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Realisations [
+    <!ELEMENT Realisations (projet+)>
+    <!ELEMENT projet (nom,adresse,bien+)>
+    <!ELEMENT nom (#PCDATA)>
+    <!ELEMENT adresse (rue?,ville?)>
+    <!ELEMENT rue (#PCDATA)>
+    <!ELEMENT ville (#PCDATA)>
+    <!ELEMENT bien (surface+,Caracteristiques?)>
+    <!ELEMENT surface (#PCDATA)>
+    <!ATTLIST surface val (couverte|totale) #REQUIRED>
+    <!ELEMENT Caracteristiques (etage,type)>
+    <!ELEMENT etage (#PCDATA)>
+    <!ELEMENT type (#PCDATA)>
+]>
+<Realisations>
+    <projet>
+        <nom>FARAH</nom>
+        <adresse>
+            <rue>Iben Neji</rue>
+            <ville>Soukra</ville>
+        </adresse>
+        <bien>
+            <surface val="couverte">110</surface>
+            <surface val="totale">114.72</surface>
+            <Caracteristiques>
+                <etage>RDC</etage>
+                <type>appartement</type>
+            </Caracteristiques>
+        </bien>
+        <bien>
+            <surface val="couverte">90</surface>
+            <surface val="totale">202</surface>
+            <Caracteristiques>
+                <etage>2</etage>
+                <type>duplex</type>
+            </Caracteristiques>
+        </bien>
+    </projet>
+</Realisations>

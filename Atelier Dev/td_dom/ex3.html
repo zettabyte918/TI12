@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hiii</h1>
+    <p>yoooooo</p>
+    <div>
+      <p>11111</p>
+      <p>11111</p>
+      <p>11111</p>
+    </div>
+    <a href="https://google.com">ex1</a>
+    <a href="https://youtube.com">ex2</a>
+    <button onclick="nombres()">nombre</button>
+    <button onclick="contenu()">contenu</button>
+
+    <fieldset>
+      <legend>contenu</legend>
+      <div id="par"></div>
+      <div id="href"></div>
+    </fieldset>
+    <script>
+      const nombres = () => {
+        alert(
+          `nombre de paragraphe est ${
+            document.getElementsByTagName("p").length
+          }`
+        );
+        alert(
+          `nombre de lien est ${document.getElementsByTagName("a").length}`
+        );
+      };
+
+      const contenu = () => {
+        //lien
+        let lien = "</br>";
+        let arr = document.getElementsByTagName("a");
+        for (i = 0; i < arr.length; i++) {
+          lien += `${i + 1}) ${arr[i].href} => ${arr[i].innerHTML}</br>`;
+        }
+
+        document.getElementById("href").innerHTML = lien;
+
+        //para
+        let para = "";
+        let arr2 = document.getElementsByTagName("p");
+        for (i = 0; i < arr2.length; i++) {
+          para += `${arr2[i].innerHTML}</br>`;
+        }
+        document.getElementById("par").innerHTML = para;
+      };
+    </script>
+  </body>
+</html>

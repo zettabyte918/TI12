@@ -1,0 +1,11 @@
+<!ELEMENT Realisations (projet?)>
+<!ELEMENT projet (nom?,adresse?,bien*)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT adresse (rue?,ville?)>
+<!ELEMENT rue (#PCDATA)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT bien (surface+,Caracteristiques?)>
+<!ATTLIST surface val (couverte|totale) CDATA #REQUIRED>
+<!ELEMENT Caracteristiques (etage?,type?)>
+<!ELEMENT etage (#PCDATA)>
+<!ELEMENT type (#PCDATA)>

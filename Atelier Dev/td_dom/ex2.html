@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">bonjour</h1>
+    <script>
+        const get = (id) => {
+            return document.querySelector(`#${id}`);
+        }
+
+        const style = (text) => {
+            return get(text).style;
+        }
+
+        style("text").background = "red";
+        style("text").color = "gray";
+
+
+        alert(get("text").innerHTML);
+
+        get("text").innerHTML = "happy day";
+
+        alert(get("text").innerHTML);
+
+    </script>
+</body>
+</html>

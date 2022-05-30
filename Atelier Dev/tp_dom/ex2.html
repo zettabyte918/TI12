@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      .cadre {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myDiv">
+      <h3 id="titre">Agriculture biologique</h3>
+      <h4>Les 3 règles de l’agriculture biologique:</h4>
+      <p id="par">
+        <em>Pas de pesticides ni d’herbicides chimiques.</em>
+        <em>Pas de fertilisants de synthèse ni de boues d’épuration.</em>
+        <em>Pas de semences issues d'OGM.</em>
+      </p>
+    </div>
+    <input
+      type="button"
+      onclick="convertToList(), metEnForme();"
+      value="Mettre en forme"
+    />
+    <script>
+      const convertToList = () => {
+        let lists = "";
+        const ems = document.getElementsByTagName("em");
+        for (let i = 0; i < ems.length; i++) {
+          let element = ems[i];
+          lists += `<li value="${i}">${element.innerHTML}</li>`;
+        }
+
+        let ul = `<ul>${lists}</ul>`;
+        par.innerHTML = ul;
+      };
+
+      const metEnForme = () => {
+        // const titre = document.getElementById("titre");
+        titre.style.color = "red";
+        titre.style.textAlign = "center";
+        titre.className = "cadre";
+      };
+    </script>
+  </body>
+</html>

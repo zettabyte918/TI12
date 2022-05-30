@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblio SYSTEM "ex1.dtd">
+<biblio>
+    <livre lang="en">
+        <titre>Les Misérables</titre>
+        <auteur>Victor Hugo</auteur>
+        <nb_tomes>3</nb_tomes>
+    </livre>
+    <livre lang="en">
+        <titre>XML</titre>
+        <auteur>Alexandre Brillant</auteur>
+    </livre>
+    <livre lang="en">
+        <titre>Beginning javascript</titre>
+        <auteur>Paul W, Jeremy M</auteur>
+        <nb_tomes>1</nb_tomes>
+    </livre>
+</biblio>
