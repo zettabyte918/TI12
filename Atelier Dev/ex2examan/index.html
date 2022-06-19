@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <form name="calc">
+      Nombre 1 <input type="text" id="nbr1" name="nbr1" /><br />
+      Opération<input type="button" value="/" name="op" /><br />
+      Nombre 2 <input type="text" id="nbr2" name="nbr2" /><span
+        id="verif"
+      ></span>
+      <input onclick="verif()" type="button" value="calculer" />
+      <div id="res">Le résultat est :</div>
+    </form>
+    <script>
+      const verif = () => {
+        const nb1 = document.getElementById("nbr1").value;
+        const nb2 = document.getElementById("nbr2").value;
+        if (nb2 == "0") {
+          const span = document.getElementById("verif");
+          span.innerHTML = "verifier la valeur !!!";
+          span.style.color = "red";
+        } else {
+          document.getElementById("res").innerHTML += nb1 / nb2;
+        }
+      };
+    </script>
+  </body>
+</html>

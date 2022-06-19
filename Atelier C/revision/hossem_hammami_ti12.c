@@ -247,7 +247,7 @@ void main() {
     int x = 0;
     File p,n,o,res;
     // char eq[50] = "(((4+5)*7)-9)/(4+2)";
-    char eq[50] = "(5+(5+5)+(5+5))";
+    char eq[50] = "((5+2)*9)/(4+2)";
 
     //initialisation des files
     p = init();

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rectte titre="koskous" nbPerson="4">
+    <ingredient qte="1" unite="kg">koskous</ingredient>
+    <ingredient qte="2" unite="kg">ligume</ingredient>
+    <ingredient qte="5" unite="cm">cel</ingredient>
+    <dureeFour unite="min">4</dureeFour>
+</rectte>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <form name="calc">
+      Nombre 1 <input type="text" id="nbr1" name="nbr1" /><br />
+      Opération<input type="button" value="/" name="op" /><br />
+      Nombre 2 <input type="text" id="nbr2" name="nbr2" /><span
+        id="verif"
+      ></span>
+      <input type="button" onclick="calcule()" value="calculer" />
+
+      <div id="res">Le résultat est :</div>
+    </form>
+    <script>
+      const calcule = () => {
+        const nb1 = document.getElementById("nbr1").value;
+        const nb2 = document.getElementById("nbr2").value;
+
+        if (!nb2 | (nb2 === "0")) {
+          const span = document.getElementById("verif");
+          span.innerHTML = "division par zéro interdit";
+          span.style.color = "red";
+        } else {
+          document.getElementById("verif").innerHTML = "";
+
+          const span = document.getElementById("res");
+          span.innerHTML += nb1 / nb2;
+          span.style.color = "green";
+        }
+      };
+    </script>
+  </body>
+</html>

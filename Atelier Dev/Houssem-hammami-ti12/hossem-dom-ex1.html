@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hossem Hammami</title>
+  </head>
+  <body
+    onload="
+    nbVille();
+    afficheVilles();
+    remplacer();
+    changeColor();
+    changeSize();"
+  >
+    <div class="ville">
+      <ul>
+        <li>Nabeul</li>
+        <li>Tunis</li>
+        <li>Sousse</li>
+      </ul>
+    </div>
+    <script>
+      const nbVille = () => {
+        const villes = document.getElementsByTagName("li");
+        alert(`le nombre villes est: ${villes.length}`);
+      };
+
+      const afficheVilles = () => {
+        let villesHtml = "les villes sont: \n\n";
+        const villes = document.getElementsByTagName("li");
+        for (let i = 0; i < villes.length; i++) {
+          const element = villes[i];
+          villesHtml += `${i + 1}) ${element.innerHTML} \n`;
+        }
+        alert(villesHtml);
+      };
+
+      const remplacer = () => {
+        const villes = document.getElementsByTagName("li");
+        for (let i = 0; i < villes.length; i++) {
+          const element = villes[i];
+          if (element.innerHTML === "Tunis") element.innerHTML = "Kef";
+        }
+      };
+
+      const changeColor = () => {
+        const villes = document.getElementsByTagName("li");
+        villes[0].style.color = "blue";
+      };
+
+      const changeSize = () => {
+        const villes = document.getElementsByTagName("li");
+        villes[1].style.fontSize = "x-small";
+      };
+    </script>
+  </body>
+</html>

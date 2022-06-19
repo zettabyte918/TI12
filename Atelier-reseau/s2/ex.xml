@@ -1,0 +1,4 @@
+<!DOCTYPE root-element PUBLIC "PUB1" "file.dtd">
+<root-element></root-element>
+<!DOCTYPE root-element SYSTEM "file.dtd">
+<root-element></root-element>
